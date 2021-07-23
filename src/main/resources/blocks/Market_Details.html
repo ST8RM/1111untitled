@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://bootstraptema.ru/snippets/style/2015/bootswatch/bootstrap-sandstone-v3.3.6.css">
+</head>
+
+<body>
+<header th:insert="blocks/header::header"></header>
+<div class="container mt-5">
+    <div th:each="el : ${post}" class = "alert alert-info mt-2"><br><br>
+        <h1 th:text= "${el.name}"/><br><br>
+        <p th:text= "${el.description}"/><br><br>
+        <p><b>Покупки:</b> </p>
+        <a th:href= "'/market/'+ ${el.id} + '/edit'" class="btn btn-warning">Редактировать</a><br><br>
+        <form th:action="'/market/'+ ${el.id} + '/delete'" method="post">
+            <button class="btn btn-warning" + type="submit">Удалить</button><br><br>
+        </form>
+
+    </div>
+</div>
+<div th:insert="blocks/footer::footer"></div>
+</body>
+</html>

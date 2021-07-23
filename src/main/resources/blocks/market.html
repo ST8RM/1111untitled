@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+<header th:insert="blocks/header::header"></header>
+<p th:text="'Hello world, ' + ${title} + '!'" />
+
+<section class="d-flex align-items-center position-relative bg-dark bg-size-cover bg-position-center min-vh-100 overflow-hidden pt-6 pb-lg-5" style="background-image: url();">
+
+    <div class="container mt-5">
+        <h1>товары</h1>
+        <div th:each="el: ${name1}" class = "alert alert-info mt-2">
+            <h3 th:text = "${el.name}"/>
+            <p th:text = "${el.price}"/>
+            <a th:href = "'/market/'+ ${el.id}" class="btn btn-warning">Детальнее</a>
+        </div>
+
+
+<div class="list-block clrfix hidden-sm"><ul><li>
+    <a href="/pc" rel="section-24194" class="smoothScroll js-scrool-to"><span class="link_decor">Компьютеры</span></a>
+</li><li><a href="/notebook" rel="section-24240" class="smoothScroll js-scrool-to"><span class="link_decor">Ноутбуки</span></a>
+</li><li><a href="/phones" rel="section-22680" class="smoothScroll js-scrool-to"><span class="link_decor">Смарт-фоны</span></a></li>
+</ul>
+</div>
+</ul>
+</div>
+</section>
+
+<div th:insert="blocks/footer::footer"></div>
+</main>
+</body>
+</html>

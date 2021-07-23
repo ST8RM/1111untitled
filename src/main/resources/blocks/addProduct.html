@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="${title}"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+<header th:insert="blocks/header::header"></header>
+<p th:text="'Последние Новости, ' + ${title} + '!'" />
+<div class="container mt-5 mb-5">
+	<h1>Добавление товаров</h1>
+	<form action="/market/add" method="post">
+		<input type="text" name="name" placeholder="Введите название" class="form-control"></br>
+		<input type="text" name="price" placeholder="Введите цену" class="form-control"></br>
+		<textarea name="description" placeholder="Введите описание" class="form-control"></textarea></br>
+		<button type="submit" class="btn btn-submit">Добавить Запись</button>
+	</form>
+	<div class="custom-file mb-4">
+		<input type="file" name="file" class="custom-file-input"
+			   id="customFile"> <label class="custom-file-label"
+									   for="customFile">Product Image</label>
+	</div>
+</div>
+</div>
+<div th:insert="blocks/footer::footer"></div>
+</body>
+</html>
+

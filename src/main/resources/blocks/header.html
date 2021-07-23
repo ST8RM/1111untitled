@@ -1,0 +1,26 @@
+<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/main">KeyStore</a>
+            <a class="btn mb-2 mr-2 btn-outline-primary" aria-current="Главная" href="/main">Главная</a><br>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+
+
+
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="Главная" href="/about">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/market">Магазин</a>
+                    </li>
+
+                    <a class="btn mb-2 mr-2 btn-outline-primary" aria-current="Войти/Выйти" href="/logout">Войти/Выйти</a><br>
+                    <a class="btn mb-2 mr-2 btn-outline-primary" aria-current="Добавление" href="/market/add">Добавление</a><br>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
